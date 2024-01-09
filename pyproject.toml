@@ -1,0 +1,25 @@
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pika-api"
+version = "0.1.0"
+description = "Pika API python SDK."
+readme = "README.md"
+authors = [
+    { name = "Rishi Mohan", email = "iamrishi.ms@gmail.com" }
+]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+dependencies = [
+    "requests >= 2.28.1",
+]
+requires-python = ">=3.6"
+
+[project.urls]
+Homepage = "https://github.com/rishimohan/pika-api-python-sdk"
