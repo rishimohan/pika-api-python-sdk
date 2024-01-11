@@ -1,6 +1,6 @@
 import requests
 
-from pika_api.exceptions import APIException, BadRequestException
+from pika_sdk.exceptions import APIException, BadRequestException
 
 
 class PikaApi:

@@ -3,7 +3,7 @@
 ## Installation
 
 ```
-pip install pika-api
+pip install pika-sdk
 ```
 
 ## Generate image
@@ -11,7 +11,7 @@ pip install pika-api
 Initialise `PikaApi`.
 
 ```python
-pa = pika_api.PikaApi('sk-he2jdus1cbz1dpt4mktgjyvx')
+pa = pika_sdk.PikaApi('sk-he2jdus1cbz1dpt4mktgjyvx')
 ```
 
 If you don't have your API key, get one from [Pika.style](https://pika.style).
@@ -28,9 +28,9 @@ print(response['data']['base64'])
 `Base64` response format.
 
 ```python
-import pika_api
+import pika_sdk
 
-pa = pika_api.PikaApi('sk-he2jdus1cbz1dpt4mktgjyvx')
+pa = pika_sdk.PikaApi('sk-he2jdus1cbz1dpt4mktgjyvx')
 response = pa.generate_image_from_template('open-graph-image-1', {'title': 'From python sdk new'}, 'base64')
 print(response)
 
@@ -48,10 +48,10 @@ data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAJ2CAYAAABPQHtcAAAAAXNSR0IArs
 ```python
 from io import BytesIO
 
-import pika_api
+import pika_sdk
 from PIL import Image
 
-pa = pika_api.PikaApi('sk-he2jdus1cbz1dpt4mktgjyvx')
+pa = pika_sdk.PikaApi('sk-he2jdus1cbz1dpt4mktgjyvx')
 response = pa.generate_image_from_template('open-graph-image-1', {'title': 'From python sdk new'}, 'binary')
 
 with Image.open(BytesIO(response.content)) as im:
