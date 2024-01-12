@@ -6,26 +6,26 @@
 pip install pika-sdk
 ```
 
-## Generate image
+## Usage
 
-Initialise `PikaSdk`.
+If you don't have your API key, get one from [pika.style](https://pika.style/pricing). Check the documentation on [how to get your API key](https://docs.pika.style/docs/basics/getting-api-key)
+
+### Initialise
 
 ```python
-ps = pika_sdk.PikaSdk('sk-he2jdus1cbz1dpt4mktgjyvx')
+ps = pika_sdk.PikaSdk('YOUR_PIKA_API_KEY')
 ```
 
-If you don't have your API key, get one from [Pika.style](https://pika.style).
-
-Check the documentation on [How to get your API key](https://docs.pika.style/docs/basics/getting-api-key).
+### Generate image
 
 ```python
 response = ps.generate_image_from_template('open-graph-image-1', {'title': 'From python sdk new'}, 'base64')
 print(response['data']['base64'])
 ```
 
-**Example:**
+## Example
 
-`Base64` response format.
+### `Base64` response format
 
 ```python
 import pika_sdk
@@ -43,7 +43,7 @@ Base64 output
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAJ2CAYAAABPQHtcAAAAAXNSR0IArs4c6QAAIABJREFUeJzs3XmYJXdZL/Bvna37dM90FghLCBAQkC1BCBAMShLFBJAgKnofroBeFUUF5LrhiihXcV8BQRYVUUAlIewIGPbFmLCFLWwCYZEtzPR+trp/TM/......
 ```
 
-`Binary` response format.
+### `Binary` response format
 
 ```python
 from io import BytesIO
@@ -58,7 +58,7 @@ with Image.open(BytesIO(response.content)) as im:
     im.save('og.png')
 ```
 
-This example writes the binary image to the file `og.png`.
+This example writes the binary image to the file `og.png`
 
 ## generate_image_from_template
 
@@ -70,4 +70,4 @@ Use this function to generate an image. It takes in 3 arguments
 |`modifications` | Yes | Modifications for the selected template. |
 |`response_format` | No | `base64` or `binary` (Defaults to `base64`). |
 
-For available templates and it's modifications refer [image generation api templates](https://pika.style/image-generation-api/templates).
+For available templates and their modifications refer [image generation api templates](https://pika.style/image-generation-api/templates)
