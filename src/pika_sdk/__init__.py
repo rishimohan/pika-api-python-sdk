@@ -1,1 +1,1 @@
-from pika_sdk.sdk import PikaApi
+from pika_sdk.sdk import PikaSdk

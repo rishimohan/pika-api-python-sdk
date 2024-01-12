@@ -3,7 +3,7 @@ import requests
 from pika_sdk.exceptions import APIException, BadRequestException
 
 
-class PikaApi:
+class PikaSdk:
     def __init__(self, api_key):
         self.api_key = api_key
 

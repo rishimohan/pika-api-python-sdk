@@ -8,10 +8,10 @@ pip install pika-sdk
 
 ## Generate image
 
-Initialise `PikaApi`.
+Initialise `PikaSdk`.
 
 ```python
-pa = pika_sdk.PikaApi('sk-he2jdus1cbz1dpt4mktgjyvx')
+ps = pika_sdk.PikaSdk('sk-he2jdus1cbz1dpt4mktgjyvx')
 ```
 
 If you don't have your API key, get one from [Pika.style](https://pika.style).
@@ -19,7 +19,7 @@ If you don't have your API key, get one from [Pika.style](https://pika.style).
 Check the documentation on [How to get your API key](https://docs.pika.style/docs/basics/getting-api-key).
 
 ```python
-response = pa.generate_image_from_template('open-graph-image-1', {'title': 'From python sdk new'}, 'base64')
+response = ps.generate_image_from_template('open-graph-image-1', {'title': 'From python sdk new'}, 'base64')
 print(response['data']['base64'])
 ```
 
@@ -30,8 +30,8 @@ print(response['data']['base64'])
 ```python
 import pika_sdk
 
-pa = pika_sdk.PikaApi('sk-he2jdus1cbz1dpt4mktgjyvx')
-response = pa.generate_image_from_template('open-graph-image-1', {'title': 'From python sdk new'}, 'base64')
+ps = pika_sdk.PikaSdk('sk-he2jdus1cbz1dpt4mktgjyvx')
+response = ps.generate_image_from_template('open-graph-image-1', {'title': 'From python sdk new'}, 'base64')
 print(response)
 
 print("Image base64:", response['data']['base64'])
@@ -51,8 +51,8 @@ from io import BytesIO
 import pika_sdk
 from PIL import Image
 
-pa = pika_sdk.PikaApi('sk-he2jdus1cbz1dpt4mktgjyvx')
-response = pa.generate_image_from_template('open-graph-image-1', {'title': 'From python sdk new'}, 'binary')
+ps = pika_sdk.PikaSdk('sk-he2jdus1cbz1dpt4mktgjyvx')
+response = ps.generate_image_from_template('open-graph-image-1', {'title': 'From python sdk new'}, 'binary')
 
 with Image.open(BytesIO(response.content)) as im:
     im.save('og.png')
