@@ -1,5 +1,7 @@
 # Pika API Python SDK
 
+View on pypi.org: [pypi.org/project/pika-sdk](https://pypi.org/project/pika-sdk/)
+
 ## Installation
 
 ```
