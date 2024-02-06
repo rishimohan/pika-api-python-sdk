@@ -22,4 +22,4 @@ dependencies = [
 requires-python = ">=3.6"
 
 [project.urls]
-Homepage = "https://github.com/rishimohan/pika-api-python-sdk"
+Homepage = "https://pika.style/image-generation-api"
